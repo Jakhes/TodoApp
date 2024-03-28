@@ -27,39 +27,28 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             TodoComposeTheme {
-
                 MainSample()
             }
         }
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-
-}
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainSample() {
-
-    todoFeature()
+    TodoFeature()
 }
 
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
     TodoComposeTheme {
-        todoFeature()
+        TodoFeature()
     }
 }
 
 @Composable
-fun todoFeature()
+fun TodoFeature()
 {
     Surface(color = Color(0xFF404C50)) {
         val navController = rememberNavController()
