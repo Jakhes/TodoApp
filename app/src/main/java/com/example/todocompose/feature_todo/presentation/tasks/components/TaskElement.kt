@@ -42,7 +42,7 @@ fun TaskElement(
 
                 onCheckedClick(task)},
             colors = CheckboxDefaults.colors(
-                checkedColor = Color.hsv(308f, 0.50f, 0.54f),
+                checkedColor = Color(0xFF7D767A),
                 uncheckedColor = Color.White
             ))
             Text(
@@ -61,7 +61,7 @@ fun TaskElement(
             ) {
                 Icon(imageVector = Icons.Default.Delete,
                     contentDescription = "Delete Task",
-                    tint = Color.hsv(8f, 0.55f, 0.60f)
+                    tint = Color(0xFF918765)
                 )
             }
         }

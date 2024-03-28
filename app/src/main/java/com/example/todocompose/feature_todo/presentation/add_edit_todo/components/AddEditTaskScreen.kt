@@ -64,7 +64,7 @@ fun AddEditTaskScreen(
         snackbarHost = { SnackbarHost(hostState = snackbarHostState) }
     ) {
         PaddingValues ->
-        Surface(color = Color.DarkGray) {
+        Surface(color = Color(0xFF404C50)) {
             Column(
                 modifier = Modifier
                     .fillMaxSize()

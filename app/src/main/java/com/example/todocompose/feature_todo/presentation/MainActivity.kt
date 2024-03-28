@@ -61,7 +61,7 @@ fun GreetingPreview() {
 @Composable
 fun todoFeature()
 {
-    Surface(color = Color.DarkGray) {
+    Surface(color = Color(0xFF404C50)) {
         val navController = rememberNavController()
         NavHost(
             navController = navController,

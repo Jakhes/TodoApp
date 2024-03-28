@@ -1,11 +1,15 @@
 package com.example.todocompose.feature_todo.presentation.tasks.components
 
+import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.Divider
@@ -25,13 +29,16 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.example.todocompose.feature_todo.presentation.tasks.TaskViewModel
 import com.example.todocompose.feature_todo.presentation.tasks.TasksEvent
 import com.example.todocompose.feature_todo.presentation.util.Screen
+import kotlin.math.round
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -55,11 +62,14 @@ fun TodoTaskScreen(
         modifier = Modifier.padding(16.dp),
         topBar = {
             TopAppBar(
-                title = { Text(text = "Todo App") },
+                title = { Text(text = "Today's Todos", fontWeight = FontWeight.Bold) },
+
                 colors = TopAppBarDefaults.mediumTopAppBarColors(
-                    containerColor = Color.hsv(100.0f, 0.50f, 0.50f),
-                    titleContentColor = Color.White
-                )
+                    containerColor = Color(0xFF96B1B9),
+                    titleContentColor = Color(0xFF1E2021)
+                ),
+
+
             )
         },
         content = { padding ->
@@ -67,7 +77,7 @@ fun TodoTaskScreen(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(padding),
-                color = Color.DarkGray
+                color = Color(0xFF404C50)
 
             )   {
                 LazyColumn(modifier = Modifier.fillMaxSize()){
@@ -93,7 +103,7 @@ fun TodoTaskScreen(
         },
         floatingActionButton = {
             FloatingActionButton(
-                containerColor = Color.hsv(219f, 0.41f, 0.56f),
+                containerColor = Color(0xFF96B1B9),
                 onClick = {
                 navController.navigate(Screen.AddEditTaskScreen.route)
             }) {
